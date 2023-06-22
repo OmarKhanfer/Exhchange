@@ -63,7 +63,8 @@
           disabled>
       </div>
       <div class="col-lg-3">
-        <button class="btn btn-secondary w-100">Details</button>
+        <a class="btn btn-secondary w-100"
+          [routerLink]="['/currency/details/'+ baseCurrency?.currency +'/' + targetCurrency?.currency]">Details</a>
       </div>
     </div>
   </div>

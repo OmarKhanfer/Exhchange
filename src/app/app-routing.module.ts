@@ -7,7 +7,7 @@ import { CurrencyModule } from './currency/currency.module';
 const routes: Routes = [
   { path: '', redirectTo: 'currency', pathMatch: 'full' },
   { path: 'currency', component: HomePageComponent },
-  { path: 'currency/details/:base', component: DetailsPageComponent },
+  { path: 'currency/details/:base/:target', component: DetailsPageComponent },
 ];
 
 @NgModule({

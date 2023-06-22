@@ -4,6 +4,7 @@ export interface CurrencyState {
   targetCurrency: any;
   loading: boolean,
   exchangeRate:any,
+  history:any,
 }
 
 export const currencyInitialState: CurrencyState = {
@@ -12,4 +13,5 @@ export const currencyInitialState: CurrencyState = {
   targetCurrency: null,
   loading:false,
   exchangeRate:null,
+  history:null,
 }

@@ -17,4 +17,9 @@ export class CurrencyService {
   getExchangeRate(currency: string) {
     return this.http.get(this.config.GET_EXCHANGE_RATE(currency));
   }
+
+  getHistory(date_from: string, date_to: string, base_currency: string) {
+    return this.http.get(this.config.GET_HISTORY(date_from, date_to, base_currency));
+  }
+  
 }

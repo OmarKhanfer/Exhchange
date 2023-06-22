@@ -23,3 +23,8 @@ export const exchangeRateSelector = createSelector(
   selectCurrency,
   (state: CurrencyState) => state.exchangeRate
 );
+
+export const currencyHistorySelector = createSelector(
+  selectCurrency,
+  (state: CurrencyState) => state.history
+);

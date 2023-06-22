@@ -11,6 +11,7 @@ import { currencyReducer } from './store/currency.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CurrenciesEffects } from './store/currency.effects';
 import { ExchangeLabelComponent } from './components/exchange-label/exchange-label.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,6 +28,7 @@ import { ExchangeLabelComponent } from './components/exchange-label/exchange-lab
     ReactiveFormsModule,
     FormsModule,
     NgChartsModule,
+    RouterModule,
     EffectsModule.forFeature([CurrenciesEffects]),
     StoreModule.forFeature('currency', currencyReducer)
   ],

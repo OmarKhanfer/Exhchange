@@ -12,6 +12,10 @@ const currencyReducers = createReducer(
   on(currenciesActions.SUCCESS_LOAD_EXCHANGE_RATE, (state, resp) => ({ ...state, exchangeRate: resp.exchangeRate, loading: false })),
   on(currenciesActions.FAILURE_LOAD_EXCHANGE_RATE, (state, { error }) => ({ ...state, error: error, loading: false })),
 
+  on(currenciesActions.REQUEST_CURRENCY_HISTORY, state => ({ ...state, loading: true })),
+  on(currenciesActions.SUCCESS_CURRENCY_HISTORY, (state, resp) => ({ ...state, history: resp.history, loading: false })),
+  on(currenciesActions.FAILURE_CURRENCY_HISTORY, (state, { error }) => ({ ...state, error: error, loading: false })),
+  
   on(currenciesActions.SET_FROM_CURRENCY, (state, { baseCurrency }) => ({ ...state, baseCurrency: baseCurrency })),
   on(currenciesActions.SET_TO_CURRENCY, (state, { targetCurrencty }) => ({ ...state, targetCurrency: targetCurrencty })),
 );
