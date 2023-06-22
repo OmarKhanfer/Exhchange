@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-lg-4 col-sm-12">
+    <div class="row">
+      <div class="col">
+        <label for="formFile" class="form-label">Amount</label>
+        <input class="form-control" type="text" id="amount" [(ngModel)]="amount"
+          placeholder="Enter Amount">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <app-exchange-label></app-exchange-label>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-lg-3">
+        <label for="formFile" class="form-label">From</label>
+        <div ngbDropdown class="d-block">
+          <button type="button" class="w-100 btn btn-outline-primary"
+            id="dropdownBasic1" ngbDropdownToggle>
+            {{baseCurrency?.currency || 'From Currency'}}
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor="let item of currneciesList$ | async" class="w-100"
+              ngbDropdownItem
+              (click)="selectCurrency(item)">{{item.currency}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <label for class="form-label d-block">&nbsp;</label>
+        <button type="button" (click)="switchCurrency()"
+          class="btn btn-outline-primary w-100"
+          id="Switch">
+          Switch
+        </button>
+      </div>
+      <div class="col-lg-3">
+        <label for="formFile" class="form-label">To Currency</label>
+        <div ngbDropdown class="d-block">
+          <button type="button" class="w-100 btn btn-outline-primary"
+            id="dropdownBasic1" ngbDropdownToggle>
+            {{targetCurrency?.currency || 'To Currency'}}
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor="let item of currneciesList$ | async" ngbDropdownItem
+              (click)="selectTo(item)">{{item.currency}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-8">
+        <button (click)="convertCurrency()" class="btn btn-primary w-100">CONVERT</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-5">
+        <input class="form-control" type="text" [value]="exchangeResult"
+          id="date"
+          disabled>
+      </div>
+      <div class="col-lg-3">
+        <button class="btn btn-secondary w-100">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

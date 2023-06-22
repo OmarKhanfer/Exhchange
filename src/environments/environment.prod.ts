@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  currencyKey: 'lNlOcOekVdoRwpwhZLca6eI559CBbSGOutnagl2Q'
+
 };
