@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-4 mb-3 mt-3" *ngFor="let item of mergedCurrencies">
-    <div class="card p-3">
+    <div class="card p-3" [routerLink]="['/currency/details/'+ (baseCurrency$ | async)?.currency + '/' + item?.code]"  >
       <h6>{{item?.symbol}} {{item?.name}}</h6>
       <p>1 {{(baseCurrency$ | async)?.currency}} equals</p> 
       <h5>{{item?.exchangeRate}} {{item?.name}}</h5>
